@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable() // Remove providerIn:root
-export class ShareLibService {
-  
+@Injectable({
+  providedIn: 'root'
+})
+export class SharedRootService {
+
   #text = new BehaviorSubject('');
   readonly text$ = this.#text.asObservable();
 

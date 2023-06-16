@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable() // Remove providerIn:root
-export class ShareLibService {
-  
+@Injectable({
+  providedIn: 'platform'
+})
+export class SharedPlatformService {
+
   #text = new BehaviorSubject('');
   readonly text$ = this.#text.asObservable();
 
